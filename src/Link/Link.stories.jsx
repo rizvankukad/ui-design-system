@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { action } from '@storybook/addon-actions';
 
 import { Icon } from '../Icon';
 import { Link } from './Link';
@@ -10,8 +9,6 @@ const CustomLink = styled(Link)`
     color: red;
   }
 `;
-
-const onLinkClick = action('onLinkClick');
 
 export default {
   title: 'Design System/Link',
