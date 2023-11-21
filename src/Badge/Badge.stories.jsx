@@ -4,6 +4,7 @@ import { Icon } from '../Icon/Icon';
 export default {
   title: 'Design System/Badge',
   component: Badge,
+  tags: ['autodocs'],
 };
 
 export const AllBadges = {

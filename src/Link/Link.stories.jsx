@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { action } from '@storybook/addon-actions';
 
 import { Icon } from '../Icon';
 import { Link } from './Link';
@@ -10,9 +11,12 @@ const CustomLink = styled(Link)`
   }
 `;
 
+const onLinkClick = action('onLinkClick');
+
 export default {
   title: 'Design System/Link',
   component: Link,
+  tags: ['autodocs'],
 };
 
 export const ALL = {

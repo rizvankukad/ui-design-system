@@ -3,6 +3,7 @@ import { Avatar } from './Avatar';
 export default {
   title: 'Design System/Avatar',
   component: Avatar,
+  tags: ['autodocs'],
 };
 
 export const Standard = {
