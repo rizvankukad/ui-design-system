@@ -1,82 +1,82 @@
 {
   "name": "ui-design-system",
-  "version": "0.1.4",
+  "author": "Rizvan Kukkad",
+  "version": "0.1.9",
   "private": false,
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.63",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "build:old": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:storybook/recommended"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "files": [
-    "dist/**/*",
+    "lib",
+    "LICENSE",
     "README.md"
   ],
-  "license": "MIT",
-  "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs",
-    "watch": "rollup --watch -c --bundleConfigAsCjs",
-    "clean": "rimraf ./dist",
-    "prebuild": "yarn clean",
-    "release": "yarn build && auto shipit",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_f94d40fdbf219e0"
-  },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.21.5",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.21.5",
-    "@emotion/babel-plugin": "^11.11.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.1.0",
-    "@rollup/plugin-node-resolve": "^15.0.2",
-    "@rollup/plugin-terser": "^0.4.3",
-    "@storybook/addon-actions": "^7.5.3",
-    "@storybook/addon-docs": "^7.5.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@storybook/addon-essentials": "7.5.3",
     "@storybook/addon-interactions": "7.5.3",
     "@storybook/addon-links": "7.5.3",
     "@storybook/addon-onboarding": "1.0.8",
     "@storybook/blocks": "7.5.3",
+    "@storybook/preset-create-react-app": "7.5.3",
     "@storybook/react": "7.5.3",
-    "@storybook/react-vite": "7.5.3",
+    "@storybook/react-webpack5": "7.5.3",
     "@storybook/testing-library": "0.2.2",
-    "@vitejs/plugin-react": "^3.1.0",
-    "auto": "^10.3.0",
-    "boxen": "^5.0.1",
-    "chromatic": "^9.1.0",
-    "dedent": "^0.7.0",
-    "npm-run-all": "^4.1.5",
-    "polished": "^4.2.2",
-    "prettier": "^2.8.8",
-    "prop-types": "^15.8.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^3.25.0",
-    "rollup-plugin-dts": "^5.3.0",
+    "autoprefixer": "^10.4.16",
+    "babel-plugin-named-exports-order": "0.0.2",
+    "eslint-plugin-storybook": "^0.6.15",
+    "postcss": "^8.4.31",
+    "prop-types": "15.8.1",
+    "rollup": "^4.5.1",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "7.5.3",
-    "vite": "^4.1.4",
-    "zx": "^1.14.1"
-  },
-  "peerDependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    },
-    "react-dom": {
-      "optional": true
-    }
-  },
-  "resolutions": {
-    "jackspeak": "2.1.1"
-  },
-  "readme": "ERROR: No README data found!"
+    "tailwindcss": "^3.3.5",
+    "typescript-plugin-css-modules": "^5.0.2",
+    "webpack": "5.89.0"
+  }
 }
